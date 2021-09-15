@@ -4,8 +4,6 @@ function greatestOfTwoNumbers(a, b) {
     return a;
   else
     return b;
-
-
 }
 
 
@@ -91,7 +89,7 @@ function add(numbers) {
     }
     if (count == 0)
       return 0;
-
+    
     let sum = 0;
     for (let i = 0; i < numbers.length; i++) {
       if(typeof numbers[i]  ==  typeof "2" )
@@ -99,10 +97,19 @@ function add(numbers) {
       sum += numbers[i].length
       continue
       }
-      else 
+      else if (typeof numbers[i]  === "number"  )
       sum += numbers[i]
+      else if(numbers[i]  === true)
+      sum+=1
+      else if(numbers[i]  === false)
+      sum+=0
+      else{
+      throw new Error("Unsupported data type sir or ma'am")
+      }
+    
     }
     return  Number.parseInt( sum);
+  
 
   }
 
